@@ -1,5 +1,6 @@
+cd ..
+brew services restart mongodb-community
 ./gradlew clean
-./gradlew goJF
 ./gradlew build -x test
 ./gradlw bootjar
 pwd
