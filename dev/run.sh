@@ -1,6 +1,6 @@
 ./gradlew clean
 ./gradlew goJF
-./gradlew build
+./gradlew build -x test
 ./gradlw bootjar
 pwd
 cd build/libs
