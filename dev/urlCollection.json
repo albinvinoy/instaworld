@@ -1,0 +1,42 @@
+{
+  "info": {
+    "_postman_id": "f304e0e4-e196-4deb-81dd-0b70084ed2c9",
+    "name": "Instagram",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "localhost:8080/newPost",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "postOwnerId",
+            "value": "123131",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "Hey",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{api-url}}/newPost",
+          "host": [
+            "{{api-url}}"
+          ],
+          "path": [
+            "newPost"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}
