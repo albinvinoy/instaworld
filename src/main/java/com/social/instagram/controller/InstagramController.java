@@ -12,8 +12,7 @@ public class InstagramController {
 
   @PostMapping("/newPost")
   public Mono<TimelineResponse<String>> saveOriginalPost(
-      @RequestHeader(value = "postOwnerId") String ownerId,
-      @RequestBody String post) {
+      @RequestHeader(value = "postOwnerId") String ownerId, @RequestBody String post) {
     return Mono.empty();
   }
 }

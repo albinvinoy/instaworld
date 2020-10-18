@@ -25,6 +25,8 @@ dependencies {
 	implementation 'org.springframework.session:spring-session-core'
 	compile 'com.google.googlejavaformat:google-java-format:1.9'
 	compile group: 'io.projectreactor', name: 'reactor-core', version: '3.3.10.RELEASE'
+	// https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk
+	compile group: 'com.amazonaws', name: 'aws-java-sdk', version: '1.11.649'
 
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
