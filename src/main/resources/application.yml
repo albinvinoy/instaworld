@@ -1,0 +1,10 @@
+logging:
+  level: info
+
+spring:
+  application:
+    name: instaWorld
+  data:
+  mongodb:
+    database: instaconnect
+    uri: mongodb://localhost:27017/

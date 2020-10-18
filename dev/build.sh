@@ -4,5 +4,6 @@ if [ "$0" != "$SCRIPT_PATH" ] && [ "$SCRIPT_PATH" != ""]; then
   cd SCRIPT_PATH
 fi
 
+./gradlew goJF
 ./gradlew clean
-rm -rf build/*
+./gradlew build bootjar -x test
