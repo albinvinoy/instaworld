@@ -1,6 +1,6 @@
-package com.social.instagram.Repository;
+package com.social.instagram.repository;
 
-import com.social.instagram.Document.Friends;
+import com.social.instagram.document.Friends;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 

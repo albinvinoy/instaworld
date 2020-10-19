@@ -1,23 +1,29 @@
-package com.social.instagram.Document;
+package com.social.instagram.document;
 
-import java.util.List;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collation = "user")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Slf4j
-public class AccountUser {
+@Builder
+@Document(collection = "profile_information")
+public class ProfileAccount {
 
   @Id private String userId;
+
+  @Indexed(unique = true)
+  private String userName;
+
+  private String password;
   private String firstName;
   private String lastName;
   private String email;
-  private List<String> timelinePostId;
 }

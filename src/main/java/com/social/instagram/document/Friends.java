@@ -1,4 +1,4 @@
-package com.social.instagram.Document;
+package com.social.instagram.document;
 
 import java.io.Serializable;
 import java.time.Instant;
