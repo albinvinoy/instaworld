@@ -13,9 +13,7 @@ import org.springframework.data.annotation.Id;
 @NoArgsConstructor
 @Builder
 public class UserImage {
-    @Id
-    private String _id;
-    private String userId;
-    private String profilePictureLocation;
-
+  @Id private String _id;
+  private String userId;
+  private String profilePictureLocation;
 }

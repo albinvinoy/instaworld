@@ -3,6 +3,9 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/
       database: instaconnect
+  servlet:
+    multipart:
+      max-file-size: 50MB
 
 amazon:
   accessKey: accessKey
