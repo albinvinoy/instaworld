@@ -8,10 +8,13 @@ import com.social.instagram.repository.ProfileAccountRepository;
 
 import java.util.UUID;
 
+import com.social.instagram.service.ProfilePictureService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -22,6 +25,8 @@ public class InstagramController {
 
     @Autowired
     private final ProfileAccountRepository profileAccountRepository;
+    @Autowired
+    private final ProfilePictureService profilePictureService;
 
     @PostMapping(Endpoints.newPost)
     public Mono<TimelineResponse<String>> saveOriginalPost(
@@ -30,7 +35,7 @@ public class InstagramController {
     }
 
     //create a new account
-    @PostMapping( Endpoints.newAccount)
+    @PostMapping(Endpoints.newAccount)
     public Boolean createNewUserAccount(
             @RequestHeader(value = "userName") String userName,
             @RequestHeader(value = "password") String password,
@@ -55,9 +60,14 @@ public class InstagramController {
     }
 
     // upload an image
-    @GetMapping(Endpoints.uploadProfilePicture)
-    public void uploadProfilePicture(){
-        return;
+    @GetMapping(
+            consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            path = Endpoints.uploadProfilePicture)
+    public void uploadProfilePicture(
+            @PathVariable(value = "userId") String userId,
+            @RequestParam(value = "file") MultipartFile file) {
+        profilePictureService.uploadUserProfilePicture(userId, file);
     }
 
 }
